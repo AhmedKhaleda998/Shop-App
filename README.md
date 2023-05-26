@@ -1,4 +1,5 @@
 Node.js E-commerce App with MongoDB
+
 This is a Node.js application that provides basic e-commerce functionality, including user authentication (login and register), product management (add, update, view), user profile management, shopping cart functionality, and order placement. The application uses a MongoDB database for storing data and uses the EJS templating engine for the frontend.
 
 Prerequisites
