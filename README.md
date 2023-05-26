@@ -14,7 +14,7 @@ Installation
 2- Navigate to the project directory: cd Shop-App
 3- Install the dependencies: npm install
 4- Build and run the application: node app.js
-5- The application will be accessible at http://localhost:3000
+5- The application will be accessible at http://localhost:8888
 
 Usage
 
@@ -24,7 +24,7 @@ Fill in the required information (username, email, password), and click on the "
 Upon successful registration, you will be redirected to the login page.
 
 Login
-Visit http://localhost:3000/login to log in to your account.
+Visit http://localhost:8888/login to log in to your account.
 Enter your credentials (username/email and password), and click on the "Login" button.
 Upon successful login, you will be redirected to the home page.
 
@@ -63,4 +63,4 @@ Open a terminal, navigate to the project directory, and run the following comman
 $ docker-compose build
 $ docker-compose up -d
 $ docker-compose logs api
-The application will be accessible at http://localhost:3000
+The application will be accessible at http://localhost:8888
