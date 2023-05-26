@@ -1,0 +1,101 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/product.css">
+    <style>
+        .search-form {
+            width: 700px;
+            max-width: 90%;
+            margin: 15px auto;
+            display: block;
+        }
+
+        .contain {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #search {
+            width: 65%;
+            height: 40px;
+            border-radius: 0;
+            text-decoration: none;
+            font: inherit;
+            background: white;
+            border-radius: 3px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .filter {
+            height: 40px;
+            border-radius: 0;
+            text-decoration: none;
+            font: inherit;
+            background: white;
+            border-radius: 3px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btnnnn {
+            margin: auto 10px;
+        }
+        .prod{
+            text-align: center;
+        }
+    </style>
+    </head>
+
+    <body>
+        <%- include('../includes/navigation.ejs') %>
+
+            <main>
+                <% if (prods.length> 0) { %>
+                    <h1 class="prod">Our Products</h1>
+                    <form class="search-form" action="/products/search/:search" method="GET">
+                        <div class="form-control contain">
+                            <input placeholder="Search here..." type="text" class=" black-simple more" name="search"
+                                id="search">
+                            <button class="button black-simple more btnnnn" type="submit">Search</button>
+                        </div>
+                    </form>
+                    <form class="search-form" action="/products/filter/:minPrice/:maxPrice" method="GET">
+                        <div class="form-control contain">
+                            <div contian>
+                                <input type="number" name="minPrice" id="minPrice" class="filter" placeholder="Minimum" min="0">
+                                <input type="number" name="maxPrice" id="maxPrice" class="filter" placeholder="Maximum" min="0">
+                                <button class="button black-simple more btnnnn" type="submit">Filter</button>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="grid">
+                        <% for (let product of prods) { %>
+                            <div class="card-wrapper">
+                                <div class="card">
+                                    <div class="image-wrapper container">
+                                        <img src="<%= product.imageUrl %>" alt="" class="image" />
+                                    </div>
+                                    <div class="content-wrapper">
+                                        <h2>
+                                            <%= product.title %>
+                                        </h2>
+                                        <h3>$<%= product.price %>
+                                        </h3>
+                                        <div class="actions">
+                                            <% if (isAuthenticated) { %>
+                                                <%- include('../includes/add-to-cart.ejs', {product: product}) %>
+                                                    <% } %>
+                                                        <a href="/products/<%= product._id %>"><button
+                                                                class="button black-simple more">More
+                                                                Details</button></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <% } %>
+                    </div>
+                    <% } else { %>
+                        <h1 class="nothing">No Products Found!</h1>
+                        <% } %>
+            </main>
+            <%- include('../includes/end.ejs') %>

@@ -1,0 +1,53 @@
+<%- include('../includes/head.ejs') %>
+    <!-- <link rel="stylesheet" href="/css/product.css"> -->
+    <style>
+        .contain {
+            max-width: 800px;
+            background: #ffffff;
+            padding: 30px 0;
+            margin: 60px auto;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .button.green-solid {
+            border: solid 2px #95AB63;
+            color: #fff;
+            background: #95AB63;
+        }
+
+        .button.green-solid:hover {
+            background: #BDD684;
+            border: solid 2px #BDD684;
+        }
+
+        .button {
+            padding: 10px 15px;
+            border: none;
+            background: none;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            text-align: center;
+            cursor: pointer;
+        }
+    </style>
+    </head>
+
+    <body>
+        <%- include('../includes/navigation.ejs') %>
+            <main class="centered contain">
+                <div class="image">
+                    <img src="<%= product.imageUrl %>" alt="<%= product.title %>">
+                </div>
+                <h1>
+                    <%= product.title %>
+                </h1>
+                <h2>$<%= product.price %>
+                </h2>
+                <p>
+                    <%= product.description %>
+                </p>
+                <% if (isAuthenticated) { %>
+                    <%- include('../includes/add-to-cart.ejs', {product: product}) %>
+                        <% } %>
+            </main>
+            <%- include('../includes/end.ejs') %>

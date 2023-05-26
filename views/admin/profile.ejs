@@ -1,0 +1,34 @@
+<%- include('../includes/head.ejs') %>
+    <style>
+        .contain {
+            max-width: 800px;
+            background: #ffffff;
+            padding: 30px 0;
+            margin: 60px auto;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+        }
+        .profile{
+            text-align: center;
+        }
+    </style>
+    </head>
+
+    <body>
+        <%- include('../includes/navigation.ejs') %>
+        <h1 class="profile">My Profile</h1>
+            <main class="centered contain">
+                <div class="image">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/480px-Default_pfp.svg.png" alt="profile pic">
+                </div>
+                <h1>
+                    <%= user.firstName %>
+                        <%= user.lastName %>
+                </h1>
+                <h3>
+                    <%= user.gender %>
+                </h3>
+                <p>
+                    <%= user.email %>
+                </p>
+            </main>
+            <%- include('../includes/end.ejs') %>

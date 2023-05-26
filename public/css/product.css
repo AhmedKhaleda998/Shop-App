@@ -1,0 +1,133 @@
+.product-form {
+    width: 20rem;
+    max-width: 90%;
+    margin: auto;
+    display: block;
+}
+
+.product-item {
+    width: 20rem;
+    max-width: 95%;
+    margin: 1rem;
+}
+
+.product__title {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.product__price {
+    text-align: center;
+    color: #4d4d4d;
+    margin-bottom: 0.5rem;
+}
+
+.product__description {
+    text-align: center;
+}
+
+.card {
+    max-width: 300px;
+    height: 400px;
+    background: #ffffff;
+    margin: 50px auto;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.card .content-wrapper {
+    padding: 20px;
+}
+
+.button {
+    padding: 10px 15px;
+    border: none;
+    background: none;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    text-align: center;
+    cursor: pointer;
+}
+
+.button.green-solid {
+    border: solid 2px #95AB63;
+    color: #fff;
+    background: #95AB63;
+}
+
+.button.green-solid:hover {
+    background: #BDD684;
+    border: solid 2px #BDD684;
+}
+
+
+.button.black-simple {
+    border: solid 2px #10222B;
+}
+
+.button.black-simple:hover {
+    background: #10222B;
+    color: #fff;
+}
+
+.image {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .card .image-wrapper {
+        height: 55%;
+    }
+
+    .card .content-wrapper .actions .button {
+        width: 100%;
+        float: none;
+        margin: 0 0 2% 0;
+    }
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.card {
+    width: 300px;
+    height: 400px;
+    /* Rest of the styles */
+}
+
+.card .content-wrapper {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+}
+
+.image-wrapper {
+    height: calc(100% - 150px);
+    /* Adjust the height based on the content height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    /* Preserve the image aspect ratio */
+}
+
+.actions {
+    margin-top: auto;
+}
